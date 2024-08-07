@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Tempo e Distância</title>
+</head>
+<body>
+    <h1>Bem-vindo, {{ username }}</h1>
+    <h2>Envie sua distância e tempo</h2>
+    
+    <form method="POST" action="{{ url_for('resultado') }}">
+        <label for="distancia">Distância:</label>
+        <input type="number" id="distancia" name="distancia" required>
+        <label for="tempo">Tempo:</label>
+        <input type="time" id="tempo" name="tempo" required>
+        <button type="submit">Enviar</button>
+    </form>
+  
+    <h2>Sua distância e tempo</h2>
+    {% for mem in lista_resultado_distancia%}
+        <p>{{mem.distancia}}km | {{mem.tempo}}h</p>
+    {% endfor %}
+</body>
+</html>

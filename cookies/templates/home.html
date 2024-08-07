@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Início</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        {% if username %}
+            <h1>Bem-vindo(a), {{ username }}!</h1>
+            <a href="/logout">Sair</a>
+        {% else %}
+            <h1>Você não está logado</h1>
+            <a href="/login">Entrar</a>
+        {% endif %}
+    </div>
+</body>
+</html>

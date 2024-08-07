@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Mensagens</title>
+</head>
+<body>
+    <h1>Bem-vindo, {{ username }}</h1>
+    <h2>Enviar Mensagem</h2>
+    <form method="POST" action="{{ url_for('mensagem') }}">
+        <label for="mensagem">Mensagem:</label>
+        <input type="text" id="mensagem" name="mensagem" required>
+        <button type="submit">Enviar</button>
+    </form>
+    <h2>Suas Mensagens</h2>
+    {% for mem in mensagens %}
+        <p>{{ mem.text }}</p>
+    {% endfor %}
+</body>
+</html>
