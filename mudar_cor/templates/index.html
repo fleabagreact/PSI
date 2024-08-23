@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cores</title>
+</head>
+<body style="{{'background-color: ' + cor}}">
+    <h1>Cores</h1>
+
+    <form action="{{url_for('color')}}" method="post">
+        
+        <select name="color">
+            <option value="pink">Rosa</option>
+            <option value="blue">Azul</option>
+            <option value="yellow">Amarelo</option>
+        </select>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

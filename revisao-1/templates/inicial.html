@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+    
+    body {
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .main-container {
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    
+    .main-container h1 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+    
+    .main-container p {
+        margin-bottom: 30px;
+        color: #666;
+    }
+    
+    .button-container {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .button {
+        display: inline-block;
+        padding: 15px 30px;
+        margin: 5px;
+        background-color: #4CAF50;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    
+    .button:hover {
+        background-color: #45a049;
+    }    
+</style>
+<body>
+    <div class="main-container">
+        <h1>Bem-vindo</h1>
+        <div class="button-container">
+            <a href="login.html" class="button">Login</a>
+            <a href="cadastro.html" class="button">Cadastro</a>
+        </div>
+    </div>
+</body>
+</html>
