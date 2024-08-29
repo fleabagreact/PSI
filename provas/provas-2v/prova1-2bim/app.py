@@ -9,9 +9,19 @@ def connect_db():
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    conn = connect_db()
+    cursor = conn.cursor()
+    
+    cursor.execute('CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, email TEXT)')
+    
+    cursor.execute('SELECT nome, email FROM usuarios')
+    usuarios = cursor.fetchall()
+    
+    conn.close()
+    
+    return render_template('index.html', usuarios=usuarios)
 
-@app.route('/cadastrar_usuario', methods=['GET', 'POST'])
+@app.route('/cadastrar', methods=['GET', 'POST'])
 def cadastrar():
     if request.method == 'POST':
         nome = request.form['nome']
@@ -20,7 +30,6 @@ def cadastrar():
         conn = connect_db()
         cursor = conn.cursor()
         
-        cursor.execute('CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY, nome TEXT, email TEXT)')
         cursor.execute('INSERT INTO usuarios (nome, email) VALUES (?, ?)', (nome, email))
         
         conn.commit()

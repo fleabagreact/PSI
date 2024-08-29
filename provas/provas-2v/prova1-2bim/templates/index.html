@@ -5,5 +5,13 @@
 {% block content %}
 <h1>Bem-vindo à Escola</h1>
 <p>Esta é a página inicial da aplicação.</p>
-<a href="{{ url_for('cadastrar') }}">Cadastrar Usuário</a>
+
+<h2>Usuários Cadastrados</h2>
+<ul>
+    {% for usuario in usuarios %}
+    <li>{{ usuario[0] }} - {{ usuario[1] }}</li>
+    {% else %}
+    <li>Nenhum usuário cadastrado.</li>
+    {% endfor %}
+</ul>
 {% endblock %}

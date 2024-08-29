@@ -4,7 +4,7 @@ import sqlite3
 DATABASE = 'escola.db'
 
 # Localização do arquivo SQL
-SCHEMA = "database/schema.sql"
+SCHEMA = 'database/schema.sql'
 
 def init_db():
     # Abre a conexão com o banco de dados
