@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+    {% if current_user.is_authenticated %}
+        <h1>Bem-vindo(a), {{ current_user.matricula }}</h1>
+        <p>Você está logado.</p>
+    {% else %}
+        <h1>Bem-vindo ao nosso site!</h1>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Cadastro de Exercício{% endblock %}
+
+{% block content %}
+    <h1>Cadastro de Exercício</h1>
+    <form method="POST" action="{{ url_for('exercicio') }}">
+        <label for="nome">Nome do Exercício:</label>
+        <input type="text" name="nome" id="nome" required><br>
+        <label for="descricao">Descrição:</label>
+        <input type="text" name="descricao" id="descricao"><br>
+        <button type="submit">Cadastrar Exercício</button>
+    </form>
+
+    <h2>Lista de Exercícios</h2>
+    <ul>
+        {% if exercicios %}
+            {% for exercicio in exercicios %}
+                <li>{{ exercicio.nome }} - {{ exercicio.descricao }}</li>
+            {% endfor %}
+        {% else %}
+            <li>Nenhum exercício cadastrado.</li>
+        {% endif %}
+    </ul>
+{% endblock %}
