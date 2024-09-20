@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    email TEXT NOT NULL,
+    cpf TEXT NOT NULL,
+    senha TEXT NOT NULL,
+    tipo TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS tecnologias (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL,
+    sigla TEXT NOT NULL,
+    descricao TEXT NOT NULL
+);

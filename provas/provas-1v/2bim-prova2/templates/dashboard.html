@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h1>Dashboard</h1>
+
+<h2>Tecnologias Cadastradas</h2>
+<ul>
+    {% for tecnologia in tecnologias %}
+    <li>{{ tecnologia.nome }} ({{ tecnologia.sigla }}): {{ tecnologia.descricao }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
