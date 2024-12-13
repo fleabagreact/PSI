@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Sessão</title>
+</head>
+<body>
+    <h1>Bem-vindo! Informe seu nome para iniciar a sessão.</h1>
+    <form action="{{ url_for('iniciar_sessao') }}" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome">
+        <button type="submit">Iniciar Sessão</button>
+    </form>
+    {% if nome %}
+        <p>Olá, {{ nome }}! A sessão está ativa.</p>
+    {% endif %}
+    <a href="{{ url_for('limpar_sessao') }}">Sair da Sessão</a>
+</body>
+</html>

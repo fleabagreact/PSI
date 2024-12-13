@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Usuário</title>
+</head>
+<body>
+    <h1>Informações do Usuário</h1>
+    <form action="{{ url_for('salvar_usuario') }}" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+        
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" name="idade" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <button type="submit">Enviar</button>
+    </form>
+    
+    {% if nome and idade and email %}
+        <p>Bem-vindo, {{ nome }}!</p>
+        <p>Idade: {{ idade }}</p>
+        <p>Email: {{ email }}</p>
+    {% endif %}
+    
+    <a href="{{ url_for('sair') }}">Sair</a>
+</body>
+</html>
